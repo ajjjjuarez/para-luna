@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para mi Luna</title>
+  <style>
+    /* -----------------------
+       Estilos generales & reset
+       ----------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      /* Fondo animado: gradiente que cambia de posición */
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* -----------------------
+       Contenedor principal
+       ----------------------- */
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* -----------------------
+       Cartel de bienvenida
+       ----------------------- */
+    .mensaje {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* -----------------------
+       Botón estilo
+       ----------------------- */
+    .boton {
+      background: #ffffff50;
+      border: 2px solid #fff;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 12px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .boton:hover {
+      background: #ffffff80;
+      transform: scale(1.05);
+    }
+
+    /* -----------------------
+       Caja oculta con ramo de flores
+       ----------------------- */
+    .caja-ramo {
+      display: none; /* inicialmente oculta */
+      margin-top: 25px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* -----------------------
+       Estilo del ramo (emoji o imagen)
+       ----------------------- */
+    .ramo {
+      font-size: 4rem;
+      margin-bottom: 15px;
+    }
+    .texto-ramo {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Cartel de bienvenida -->
+    <div class="mensaje">
+      Para la mejor novia del mundo,<br />
+      te amo mucho de muchísimo 💖
+    </div>
+
+    <!-- Botón para desplegar el ramo -->
+    <button class="boton" id="btn-ramo">Presionar</button>
+
+    <!-- Caja oculta con ramo de flores -->
+    <div class="caja-ramo" id="cajaRamo">
+      <!-- Aquí puedes reemplazar el emoji por una imagen real:
+      <img src="ruta/a/ramo.jpg" alt="Ramo de flores" style="width:200px;"> -->
+      <div class="ramo">💐</div>
+      <div class="texto-ramo">Para vos, mi Luna.</div>
+    </div>
+  </div>
+
+  <script>
+    // Al hacer clic en el botón, alterna la visibilidad de la caja con ramo.
+    document.getElementById('btn-ramo').addEventListener('click', function() {
+      const caja = document.getElementById('cajaRamo');
+      if (caja.style.display === 'block') {
+        caja.style.display = 'none';
+      } else {
+        caja.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
